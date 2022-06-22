@@ -43,6 +43,8 @@ router.post('/',(req,res)=>{
         from_account_no:req.body.from_account_no,
         to_account_no:req.body.to_account_no,
         transaction_amount:req.body.transaction_amount,
+        transaction_date:req.body.transaction_date
+
      
     });
     txn.save((err,doc)=>{
