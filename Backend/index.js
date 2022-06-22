@@ -7,6 +7,8 @@ const {mongoose} = require('./config/db.js');
 const account=require('./routers/account.js');
 const customer=require('./routers/customer.js');
 const transaction=require('./routers/transaction.js');
+const LoginRoute=require('./routers/login');
+const UserRoute =require('./routers/user');
 
 
 const app = express();
@@ -17,3 +19,5 @@ app.use('/account',account);
 app.use('/customer',customer);
 
 app.use('/transaction',transaction);
+app.use('/user',UserRoute)
+app.use('/api',LoginRoute)
