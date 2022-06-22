@@ -11,7 +11,7 @@ const app = express();
 
 // initialize middleware
 app.use(express.json({ extended: false }));
-app.get("/", (req, res) => res.send("Server up and running"));
+app.get("/", (req, res) => res.send("<h1>Server is  running</h1>"));
 
 // setting up port
 
