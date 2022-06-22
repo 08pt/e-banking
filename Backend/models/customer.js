@@ -14,13 +14,18 @@ const CustomerSchema = new mongoose.Schema({
     customer_name: {
         type:String,
     },
+    password: {
+        type:Number,
+    },
+    customer_email: {
+        type:String,
+    },
+    customer_mobile: {
+        type:Number,
+    },
     customer_address: {
         type:String,
     },
-    customer_phone_no: {
-        type:Number,
-    }
-
     
 });
 
