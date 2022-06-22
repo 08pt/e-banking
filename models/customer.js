@@ -19,11 +19,11 @@ const CustomerSchema = new mongoose.Schema({
     },
     customer_phone_no: {
         type:Number,
-    },
+    }
 
     
 });
 
-const Customer = mongoose.model("todo", CustomerSchema);
+const Customer = mongoose.model("customer", CustomerSchema);
 
 module.exports = Customer;
