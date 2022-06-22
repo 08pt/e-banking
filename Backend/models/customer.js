@@ -14,11 +14,12 @@ const CustomerSchema = new mongoose.Schema({
     customer_name: {
         type:String,
     },
-    password: {
-        type:Number,
-    },
+    
     customer_email: {
         type:String,
+    },
+    password: {
+        type:Number,
     },
     customer_mobile: {
         type:Number,

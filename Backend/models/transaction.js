@@ -14,9 +14,9 @@ const mongoose=require('mongoose')
     
     to_account_no:{type:String},
     
-    transaction_amount:{type:Number}
-    //  transaction_Date:{type:Date}
+    transaction_amount:{type:Number},
+   transaction_Date:{type:Date}
  });
 
- module.exports={Transaction};
+ module.exports = Transaction;
 

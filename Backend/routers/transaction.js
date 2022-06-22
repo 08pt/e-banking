@@ -2,7 +2,7 @@ const express=require('express');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 const router=express.Router();
-const {Transaction}=require('../models/transaction');
+const Transaction = require('../models/transaction');
  
 // get Single transaction details  by id
 
@@ -54,23 +54,20 @@ router.post('/',(req,res)=>{
         }
     });
 });
-  
-
-
-router.get('/search/:key',async(req,res)=>{
-    console.log(req.params.key)
-    let data=await Transaction.find({
-        "$or":[
-            {
-                "transaction_type":{
-                    $regex:req.params.key
-                }}
+// router.get('/search/:key',async(req,res)=>{
+//     console.log(req.params.key)
+//     let data=await Transaction.find({
+//         "$or":[
+//             {
+//                 "transaction_type":{
+//                     $regex:req.params.key
+//                 }}
                                        
-        ]
-    })
-    res.send(data)
-})
+//         ]
+//     })
+//     res.send(data)
+// })
 
 
 
-module.exports=router;
+module.exports  =   router;
