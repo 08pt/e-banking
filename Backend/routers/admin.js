@@ -25,26 +25,21 @@ router.post('/',(req,res)=>{
 })
 
 //Login a by existing user
-router.post('/check', function(req, res, next) {
-    admin.findOne({username:req.body.username,password:req.body.password}).then(data=>{
-  if(data){
-    //res.status(200).json(data)
-    res.json({
-        message:'Login Succesfull!',
-        // token
-        
-    })
-  }else{
-    res.status(401).json({error:"incorrect username or password"})
-    console.log("error in adding")
-  }
-    }).catch(err=>{
-      res.status(500).json({error:err.message})
-      console.log("catch error")
-    })
-      
-    
-  })
+router.get('/login', function(req, res, next) {
+  const{ username, password }= req.query
+     admin.findOne({username:username},(err,user)=>{
+ if(user){
+ if(password === user.password){
+   res.send({message:"login Successfully",user:user})
+ }
+     else{
+         res.send({message:"password didnt match"})
+     }
+ }else{
+     res.send({message:"incorrect username or password"})
+ }
+     })
+   });
 
   
 
