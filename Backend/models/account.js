@@ -7,6 +7,7 @@ const mongoose=require('mongoose')
      phone_no:{type:Number},
      account_pin:{type:Number},
      customer_id:{type:Number},
-     ifsc_code:{type:String}
+     ifsc_code:{type:String},
+     date:{type:Date}
  });
  module.exports={Account};
