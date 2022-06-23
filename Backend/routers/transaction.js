@@ -95,6 +95,33 @@ router.get('/search/:key',async(req,res)=>{
     res.send(data)
 })
 
+router.put('/:transaction_id',function(req,res){
+    const {transaction_id}=req.params;
+    Transaction.findOneAndUpdate({transaction_id},req.body,function(err,data){
+        if(err){
+            console.log('Error in get transaction by id'+err)
+       }
+        else{
+            res.send(data);
+        }
+     });
+    
+});
+
+// Delete transaction
+router.delete('/:transaction_id',(req,res)=>{
+    const {transaction_id}=req.params;
+    Transaction.findOneAndRemove({transaction_id},(err,doc)=>{
+        if(err){
+            console.log('Error in delete employee by id'+err)
+       }
+        else{
+            res.send(doc);
+        }
+     });
+    
+});
+
 
 
 module.exports  =   router;
