@@ -4,7 +4,7 @@ const ObjectId= require('mongoose').Types.ObjectId;
 const router=express.Router();
 const {Account}=require('../models/account');
  
-// get Single Account details  by number
+// get Single Account details  by account_number
 
 router.get('/:account_no',(req,res)=>{
     const{account_no}=req.params;
@@ -45,7 +45,8 @@ router.post('/',(req,res)=>{
      phone_no:req.body.phone_no,
      account_pin:req.body.account_pin,
      customer_id:req.body.customer_id,
-     ifsc_code:req.body.ifsc_code
+     ifsc_code:req.body.ifsc_code,
+     date:req.body.date
      
     });
     acc.save((err,doc)=>{
@@ -79,7 +80,7 @@ router.delete('/:account_no',(req,res)=>{
     const {account_no}=req.params;
      Account.findOneAndRemove({account_no},(err,doc)=>{
         if(err){
-            console.log('Error in delete employee by id'+err)
+            console.log('Error in delete customer by id'+err)
        }
         else{
             res.send(doc);
@@ -88,6 +89,7 @@ router.delete('/:account_no',(req,res)=>{
     
 });
 
+//get account details by using holder_name
 router.get('/search/:key',async(req,res)=>{
     console.log(req.params.key)
     let data=await Account.find({
@@ -96,11 +98,27 @@ router.get('/search/:key',async(req,res)=>{
                 "holder_name":{
                     $regex:req.params.key
                 }}
+               
                                        
         ]
     })
     res.send(data)
 })
+ 
+// get account details by customer_id
+
+router.get('/search1/:customer_id',(req,res)=>{
+    const{customer_id}=req.params;
+    
+     Account.findOne({customer_id},function(err,data){
+        if(err){
+            console.log('Error in getting Data'+err)
+       }
+        else{
+            res.send(data);
+        }
+        })
+     })
 
 
 
