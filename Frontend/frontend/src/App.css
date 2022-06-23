@@ -1,0 +1,26 @@
+
+
+div{
+  text-align:center;
+  margin-top:5%;
+  margin-left:22%;
+ height:500px;
+ width:500px;
+ position:absolute;
+ 
+}
+
+.reg{
+  border:1px solid black;
+}
+
+.box{
+  position :relative;
+  width:70vw;
+}
+
+.login{
+  background-color:green;
+  color:white;
+  text-align:center;
+}

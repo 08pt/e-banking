@@ -1,12 +1,23 @@
 
-import './App.scss';
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Main from './components/main';
 
-function App() {
-  return (
-    <div className="App">
-      <header><h1>Hello, World!</h1></header>
-    </div>
-  );
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+      <div className="container">
+      
+        <Main/>
+      </div>
+    </Router>
+    );
+  }
 }
 
 export default App;
+
