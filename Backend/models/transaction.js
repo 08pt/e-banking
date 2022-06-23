@@ -6,7 +6,7 @@ const mongoose=require('mongoose')
 
  const Transaction = mongoose.model('Transaction',{
      
-    transaction_id:{type:Number},
+    transaction_id:{type:String},
     
     transaction_type:{type:String},
     
@@ -15,6 +15,7 @@ const mongoose=require('mongoose')
     to_account_no:{type:String},
     
     transaction_amount:{type:Number},
+    
     transaction_date:{type:Date}
  });
 

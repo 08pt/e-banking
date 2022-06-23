@@ -46,7 +46,6 @@ router.post('/',(req,res)=>{
      
      customer_email:req.body.customer_email,
      password:req.body.password,
-     phone_no:req.body.phone_no,
      customer_mobile:req.body.customer_mobile,
      customer_address:req.body.customer_address,
      
