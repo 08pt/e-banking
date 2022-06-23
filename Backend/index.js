@@ -9,6 +9,7 @@ const customer=require('./routers/customer.js');
 const transaction=require('./routers/transaction.js');
 const LoginRoute=require('./routers/login');
 const UserRoute =require('./routers/user');
+const admin=require('./routes/admin.js')
 
 
 const app = express();
@@ -21,3 +22,4 @@ app.use('/customer',customer);
 app.use('/transaction',transaction);
 app.use('/user',UserRoute)
 app.use('/api',LoginRoute)
+app.use('/admin',admin)
