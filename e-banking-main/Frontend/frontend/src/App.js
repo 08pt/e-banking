@@ -26,7 +26,7 @@ class App extends Component {
                  </ul>
            <Routes>
            <Route exacct  path='/login' element={ < LoginForm/>}></Route>
-                <Route  path='/' element={< Home />}></Route>
+      <Route  path='/' element={< Home />}></Route>
                  <Route  path='/about' element={< About />}></Route>
                  <Route  path='/contact' element={< Contact />}></Route>
                  <Route  path='/registration' element={ < RegForm/> }></Route>

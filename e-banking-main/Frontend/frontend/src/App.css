@@ -103,24 +103,53 @@ input[type="submit"]:hover {
 
   font-size: 2rem;
 }
-.App-header
-{
-  top:0;
-  bottom: 0;
-  background-color: #01d28e;
-  border-radius: 10px;
-  padding: 1.3rem;
-  text-decoration: none;
-  text-align: left;
-  font-size: 1.9rem;
-  position: fi;
+.App {
+  text-align: center;
+  background-color:green;
 }
-.App-header a {
-  text-decoration: none;
-  padding: 11px 10px;
+ 
+.label{
+  display: block;
+  font-size: larger;
+  color: white;
+  padding: 5px;
+}
+ 
+.input{
+  font-size: larger;
+  padding: 5px;
+  margin: 2px;
+  
+}
+.btn{
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  font-size: larger;
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+ 
+.messages{
+  display: flex;
+  justify-content: center;
+}
+ 
+.error{
+  display: block;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+ 
+.success{
+  display: block;
+  background-color: lightblue;
   color: black;
-}
-.App-header a:hover{
-  color: #f8f9fd;
-  padding: 14px 16px;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
 }
