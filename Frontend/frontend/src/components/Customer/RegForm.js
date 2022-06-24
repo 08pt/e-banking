@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css'
 
 
 
@@ -25,8 +26,7 @@ const validation = ({ error, ...rest }) => {
 
   return checkValidation;
 };
-
-export default class RegForm extends Component {
+ class RegForm extends Component {
   constructor(props) {
     super(props);
 
@@ -53,11 +53,7 @@ export default class RegForm extends Component {
       },
     };
   }
-//    handleSubmit = (event) => {
-//     alert(
-//       `Entered First Name is: ${this.state.name},  Email Id is:${this.state.email}`
-//     );
-//    };
+
 
   onFormSubmit = (event) => {
     event.preventDefault();
@@ -83,10 +79,7 @@ export default class RegForm extends Component {
         error.name =
           value.length < 5 ? "Name should be 5 characaters long" : "";
         break;
-    //   case "customerid":
-    //     error.customerid =
-    //       value.length < 6   ? "Customer Id  should only  6  digit" : "";
-    //     break;
+   
         case "customerid":
             error.customerid =
               value.length < 7   ? "Customer Id  should more than 6  digit" : "";
@@ -129,12 +122,13 @@ export default class RegForm extends Component {
     const { error } = this.state;
 
     return (
-      <div className="container main">
-        <div className="card mt-5">
+
+      <div className="form">
+        <div>
           <h2>Register</h2>
-          <form className="card-body" onSubmit={this.onFormSubmit}>
-            <div className="form-group mb-3">
-              <label className="mb-2">
+          <form  onSubmit={this.onFormSubmit}>
+            <div className="input-container">
+              <label>
                 <strong>Name</strong>
               </label>
               <input
@@ -153,8 +147,8 @@ export default class RegForm extends Component {
                 <span className="invalid-feedback">{error.name}</span>
               )}
             </div>
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Customer Id</strong>
               </label>
               <input
@@ -173,8 +167,8 @@ export default class RegForm extends Component {
                 <span className="invalid-feedback">{error.customerid}</span>
               )}
             </div>
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Age</strong>
               </label>
               <input
@@ -194,8 +188,8 @@ export default class RegForm extends Component {
               )}
             </div>
 
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Email</strong>
               </label>
               <input
@@ -214,8 +208,8 @@ export default class RegForm extends Component {
                 <span className="invalid-feedback">{error.email}</span>
               )}
             </div>
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Phone</strong>
               </label>
               <input
@@ -234,8 +228,8 @@ export default class RegForm extends Component {
                 <span className="invalid-feedback">{error.phone}</span>
               )}
             </div>
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Address</strong>
               </label>
               <input
@@ -255,8 +249,8 @@ export default class RegForm extends Component {
               )}
             </div>
 
-            <div className="form-group mb-3 ">
-              <label className="mb-2">
+            <div className="input-container ">
+              <label>
                 <strong>Password</strong>
               </label>
               <input
@@ -276,8 +270,8 @@ export default class RegForm extends Component {
               )}
             </div>
 
-            <div className="form-group mb-3">
-              <label className="mb-2">
+            <div className="input-container">
+              <label>
                 <strong>Confirm Password</strong>
               </label>
               <input
@@ -309,13 +303,13 @@ export default class RegForm extends Component {
                 Register Now
               </button>
             </div>
+            
 
-            {/* <input type="checkbox" value={this.state.check} onChange={this.checkHandler}/>
-            <label  onChange={this.checkHandler}>I accept the Terms of Use & Privacy Policy</label><br/><br/>
-            <input type="submit" value="Register Now" className="login" /><br/><br/> */}
           </form>
         </div>
       </div>
+      
     );
   }
 }
+export  default RegForm
