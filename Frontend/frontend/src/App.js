@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -43,6 +44,28 @@ class App extends Component {
      
    );
   }
+=======
+
+//import logo from './logo.svg';
+import './App.css';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import ShowAccount from './components/ShowAccount';
+import Router from './components/Router';
+import AddAccount1 from './components/AddAccount1' ;
+
+function App() {
+  return (
+    <div className="App">
+      <Router/>
+     <Routes>
+     <Route path="/" element={<AddAccount1/>}/>
+     <Route path="/showAccount" element={<ShowAccount/>}/>
+     <Route path="/addAccount" element={<AddAccount1/>}/>
+     
+     </Routes>
+    </div>
+  );
+>>>>>>> 2eebaa7ead6234d19efee5f4753c00314e25a115
 }
  
 export default App;
