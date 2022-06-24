@@ -1,52 +1,4 @@
-/* 
 
-div{
-  text-align:center;
-  margin-top:5%;
-  margin-left:22%;
- height:500px;
- width:500px;
- position:absolute;
- 
-}
-
-.reg{
-  border:1px solid black;
-}
-
-.box{
-  position :relative;
-  width:70vw;
-}
-
-.login{
-  background-color:green;
-  color:white;
-  text-align:center;
-}
-.App-header{
-
-  font-size: 2rem;
-  text-decoration: none;
-  line-height:  3rem;
-
-}
-.link{
-
-  color: rgba(2, 122, 122, 0.762);
-} */
-
-.app {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  height: 100vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #f8f9fd;
-}
 
 input[type="text"],
 input[type="password"] {
@@ -103,10 +55,6 @@ input[type="submit"]:hover {
 
   font-size: 2rem;
 }
-.App {
-  text-align: center;
-  background-color:green;
-}
  
 .label{
   display: block;
@@ -123,7 +71,7 @@ input[type="submit"]:hover {
 }
 .btn{
   color: white;
-  background-color: red;
+  background-color: rgb(69, 121, 24);
   border-radius: 5px;
   font-size: larger;
   display: block;
@@ -152,4 +100,41 @@ input[type="submit"]:hover {
   width: fit-content;
   height: 50px;
   padding: 5px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.a {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+.App{
+  border-radius: 5px;
+  height: 90px;
+}
+
+a{
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: .8rem;
+  color: #f8f9fd;
+  
+}
+a:hover{
+  color: rgb(146, 202, 237);
 }
