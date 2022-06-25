@@ -19,16 +19,16 @@ class App extends Component {
                 <Link  className='link'  to="/">Home</Link>
              
              
-                <Link  to="/about">About Us</Link>
+                <Link  className='link' to="/about">About Us</Link>
              
              
-                <Link to="/contact">Contact Us</Link>
+                <Link  className='link' to="/contact">Contact Us</Link>
              
              
-                <Link to="/login">Login</Link>
+                <Link  className='link' to="/login">Login</Link>
              
              
-                <Link to="/registration">Register</Link>
+                <Link  className='link' to="/registration">Register</Link>
              
             </ul>
            <Routes>
@@ -36,7 +36,7 @@ class App extends Component {
                  <Route exact path='/about' element={< About />}></Route>
                  <Route exact path='/contact' element={< Contact />}></Route>
                  <Route exact path='/login' element={ < LoginForm/>}></Route>
-                 <Route exact path='/register' element={ < RegForm/> }></Route>
+                 <Route exact path='/registration' element={ < RegForm/> }></Route>
 
           </Routes>
           </div>

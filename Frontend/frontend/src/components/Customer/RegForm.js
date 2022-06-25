@@ -123,15 +123,17 @@ const validation = ({ error, ...rest }) => {
 
     return (
 
-      <div className="form">
+      <div style={{marginLeft:"35rem",padding:"10px",boxShadow:"5px 8px 5px 7px grey",textAlign:"center",width:"30%",height:"100%",fontSize:"1.2rem",backgroundColor:"white"}}>
         <div>
-          <h2>Register</h2>
+          <h2 style={{color:"black"}}>Register</h2>
           <form  onSubmit={this.onFormSubmit}>
-            <div className="input-container">
-              <label>
+            <div  style={{fontSize:"1.2rem",fontWeight:"800"}} className="input-container">
+              <label >
                 <strong>Name</strong>
               </label>
               <input
+                   style={{fontSize:"1.2rem",fontWeight:"400"}}
+
                 required
                 type="text"
                 name="name"
@@ -147,11 +149,13 @@ const validation = ({ error, ...rest }) => {
                 <span className="invalid-feedback">{error.name}</span>
               )}
             </div>
-            <div className="input-container">
+            <div style={{fontSize:"1.2rem",fontWeight:"800"}}className="input-container">
               <label>
                 <strong>Customer Id</strong>
               </label>
               <input
+   style={{fontSize:"1.2rem",fontWeight:"400"}}
+ 
                 required
                 type="text"
                 name="customerid"
@@ -167,11 +171,13 @@ const validation = ({ error, ...rest }) => {
                 <span className="invalid-feedback">{error.customerid}</span>
               )}
             </div>
-            <div className="input-container">
+            <div className="input-container" style={{fontSize:"1.2rem",fontWeight:"800"}}>
               <label>
                 <strong>Age</strong>
               </label>
               <input
+          style={{fontSize:"1.2rem",fontWeight:"400"}}
+
                 required
                 type="number"
                 name="age"
@@ -193,6 +199,7 @@ const validation = ({ error, ...rest }) => {
                 <strong>Email</strong>
               </label>
               <input
+               style={{fontSize:"1.2rem",fontWeight:"400"}}
                 required
                 type="email"
                 name="email"
@@ -208,11 +215,12 @@ const validation = ({ error, ...rest }) => {
                 <span className="invalid-feedback">{error.email}</span>
               )}
             </div>
-            <div className="input-container">
+            <div style={{fontSize:"1.2rem",fontWeight:"800"}}className="input-container">
               <label>
                 <strong>Phone</strong>
               </label>
               <input
+               style={{fontSize:"1.2rem",fontWeight:"400"}}
                 required
                 type="tel"
                 name="name"
@@ -228,11 +236,12 @@ const validation = ({ error, ...rest }) => {
                 <span className="invalid-feedback">{error.phone}</span>
               )}
             </div>
-            <div className="input-container">
+            <div style={{fontSize:"1.2rem",fontWeight:"800"}}className="input-container">
               <label>
                 <strong>Address</strong>
               </label>
               <input
+               style={{fontSize:"1.2rem",fontWeight:"400"}}
                 required
                 type="text"
                 name="address"
@@ -249,11 +258,12 @@ const validation = ({ error, ...rest }) => {
               )}
             </div>
 
-            <div className="input-container ">
+            <div style={{fontSize:"1.2rem",fontWeight:"800"}}className="input-container ">
               <label>
                 <strong>Password</strong>
               </label>
               <input
+              style={{fontSize:"1.2rem",fontWeight:"400"}}
                 required
                 type="password"
                 name="password"
@@ -275,6 +285,7 @@ const validation = ({ error, ...rest }) => {
                 <strong>Confirm Password</strong>
               </label>
               <input
+              style={{fontSize:"1.2rem",fontWeight:"400"}}
                 required
                 type="password"
                 name="password"
@@ -293,13 +304,13 @@ const validation = ({ error, ...rest }) => {
 
             <div className="d-grid mt-3">
               <input required type="checkbox" />
-              <label onChange={this.formObject}>
+              <label style={{fontSize:"1.2rem"}}onChange={this.formObject}>
                 I accept the Terms of Use and Privacy Policy
               </label>
               <br />
               <br />
 
-              <button type="submit" className="btn btn-block btn-primary">
+              <button  style={{fontSize:"1.1rem",backgroundColor:"rgb(10,123,80)",cursor:"pointer"}} type="submit" className="btn btn-block btn-primary">
                 Register Now
               </button>
             </div>
