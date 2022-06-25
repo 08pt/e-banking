@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink , useHistory } from "react-router-dom";
 import './style.css'
 
 
@@ -26,21 +27,16 @@ const validation = ({ error, ...rest }) => {
 
   return checkValidation;
 };
- class RegForm extends Component {
+
+
+//user data
+class RegForm extends Component {
+   history = useHistory();
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-
-      customerid: "",
-      age: "",
-      email: "",
-      phone: "",
-      address: "",
-      password: "",
-      cpassword: "",
-      check: "",
+      name: "",customerid: "",age: "", email: "",phone: "",address: "",password: "",cpassword: "",check: "",
       error: {
         name: "",
         customerid:"",
@@ -121,12 +117,42 @@ const validation = ({ error, ...rest }) => {
   render() {
     const { error } = this.state;
 
+
+
+const PostData = async(e) =>{
+  e.preventDefault();
+
+  const  { name ,customerid , age ,email, phone, address,  password,   cpassword} = user;
+
+ const res = await  fetch("/register" ,{method:"POST",headers: {"Content-Type" : "application/json"},
+ 
+ body: JSON.stringify({
+
+   name ,customerid , age ,email, phone, address,  password,   cpassword
+})
+});
+
+const  data = await data.json();
+
+
+  if(res.status === 422 || !data ){
+    window.alert("Invalid Registration");
+    console.log("Invalid Registration")
+  }else{
+
+    window.alert("Successfully Registered");
+    console.log("Registered Successfully");
+
+
+    history.pushState()
+  }
+}
     return (
 
       <div style={{marginLeft:"35rem",padding:"10px",boxShadow:"5px 8px 5px 7px grey",textAlign:"center",width:"30%",height:"100%",fontSize:"1.2rem",backgroundColor:"white"}}>
         <div>
           <h2 style={{color:"black"}}>Register</h2>
-          <form  onSubmit={this.onFormSubmit}>
+          <form method="POST" onSubmit={this.onFormSubmit}>
             <div  style={{fontSize:"1.2rem",fontWeight:"800"}} className="input-container">
               <label >
                 <strong>Name</strong>
@@ -303,17 +329,18 @@ const validation = ({ error, ...rest }) => {
             </div>
 
             <div className="d-grid mt-3">
-              <input required type="checkbox" />
-              <label style={{fontSize:"1.2rem"}}onChange={this.formObject}>
-                I accept the Terms of Use and Privacy Policy
-              </label>
+              
+              <NavLink to ="/login" className="signup" >I am already Registered</NavLink> 
+         
               <br />
               <br />
 
-              <button  style={{fontSize:"1.1rem",backgroundColor:"rgb(10,123,80)",cursor:"pointer"}} type="submit" className="btn btn-block btn-primary">
+              <button  style={{fontSize:"1.1rem",backgroundColor:"rgb(10,123,80)",cursor:"pointer"}} type="submit" 
+              onClick={PostData}  >
                 Register Now
               </button>
             </div>
+           
             
 
           </form>

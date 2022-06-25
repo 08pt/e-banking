@@ -6,7 +6,7 @@ import Home from './components/Home/home.js';
 import About from './components/About/about.js';
 import Contact from './components/Contact/contact.js';
 import LoginForm from './components/Customer/LoginForm';
-import RegForm from './components/Customer/RegForm';
+import Register from './components/Customer/RegForm';
 
 import './App.css';
  
@@ -36,7 +36,7 @@ class App extends Component {
                  <Route exact path='/about' element={< About />}></Route>
                  <Route exact path='/contact' element={< Contact />}></Route>
                  <Route exact path='/login' element={ < LoginForm/>}></Route>
-                 <Route exact path='/registration' element={ < RegForm/> }></Route>
+                 <Route exact path='/registration' element={ <Register/> }></Route>
 
           </Routes>
           </div>

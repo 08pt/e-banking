@@ -36,9 +36,28 @@ Customer.find((err,doc)=>{
 
 // Add Customer
 
+
+router.post('/register', [
+    check('transaction_amount').not().isEmpty().withMessage('Transaction Amount  must have more than 6  characters'),
+    check('weekday', 'Choose a weekday').optional(),
+    check('email', 'Your email is not valid').not().isEmpty(),
+    check('password', 'Your password must be at least 5 characters').not().isEmpty(),
+  ],
+  function (req, res) {
+    const errors = validationResult(req);
+    console.log(req.body);
+
+    if (!errors.isEmpty()) {
+      return res.status(422).jsonp(errors.array());
+    } else {
+      res.send({});
+    }
+  });
+
+
 router.post('/',(req,res)=>{
     let cust=new Customer({
-        cust_id:req.body.cust_id,
+    cust_id:req.body.cust_id,
      cust_name:req.body.cust_name,
      email:req.body.email,
      password:req.body.password,
