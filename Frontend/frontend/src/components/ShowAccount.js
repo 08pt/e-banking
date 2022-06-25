@@ -14,6 +14,18 @@ const ShowAccount = () =>{
         const res = await axios.get("http://localhost:3000/account");
         setAccounts(res.data);
     }
+    //to delete
+    function deleteacc(account_no){
+        alert(account_no)
+        fetch(`http://localhost:3000/account/${account_no}`,{
+            method:'DELETE'
+        }).then((res)=>{
+            res.json().then((resp)=>{
+                console.warn(resp)
+            })
+        })
+    }
+    
 
 
 
@@ -31,6 +43,7 @@ const ShowAccount = () =>{
                 <th>Customer Id</th>
                 <th>IFSC Code</th>
                 <th>Date</th>
+                <th>operations</th>
 
             </tr>
             <tbody>
@@ -46,6 +59,7 @@ const ShowAccount = () =>{
                     <td>{user.customer_id}</td>
                     <td>{user.ifsc_code}</td>
                     <td>{user.date}</td>
+                    <td><button onClick={()=>deleteacc(user.account_no)}>Delete Account</button></td>
                   </tr>
                 ))}
             </tbody>
