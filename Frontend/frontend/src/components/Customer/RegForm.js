@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink , useHistory } from "react-router-dom";
+import { NavLink , useNavigate } from "react-router-dom";
 import './style.css'
 
 
@@ -31,7 +31,7 @@ const validation = ({ error, ...rest }) => {
 
 //user data
 class RegForm extends Component {
-   history = useHistory();
+   navigate = useNavigate();
   constructor(props) {
     super(props);
 
@@ -121,6 +121,7 @@ class RegForm extends Component {
 
 const PostData = async(e) =>{
   e.preventDefault();
+  
 
   const  { name ,customerid , age ,email, phone, address,  password,   cpassword} = user;
 

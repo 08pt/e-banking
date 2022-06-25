@@ -37,7 +37,7 @@ Customer.find((err,doc)=>{
 // Add Customer
 
 
-router.post('/register', [
+router.post('/', [
     check('transaction_amount').not().isEmpty().withMessage('Transaction Amount  must have more than 6  characters'),
     check('weekday', 'Choose a weekday').optional(),
     check('email', 'Your email is not valid').not().isEmpty(),
