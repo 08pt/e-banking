@@ -2,7 +2,8 @@ const express=require('express');
 const ObjectId= require('mongoose').Types.ObjectId;
 
 const router=express.Router();
-const {Customer}=require('../models/customer');
+const Customer   =   require('../models/customer');
+const {check,validationResult} = require('express-validator/check')
  
 // get Single Customer details  by account_number
 
@@ -37,22 +38,22 @@ Customer.find((err,doc)=>{
 // Add Customer
 
 
-router.post('/', [
-    check('transaction_amount').not().isEmpty().withMessage('Transaction Amount  must have more than 6  characters'),
-    check('weekday', 'Choose a weekday').optional(),
-    check('email', 'Your email is not valid').not().isEmpty(),
-    check('password', 'Your password must be at least 5 characters').not().isEmpty(),
-  ],
-  function (req, res) {
-    const errors = validationResult(req);
-    console.log(req.body);
+// router.post('/', [
+//     // check('transaction_amount').not().isEmpty().withMessage('Transaction Amount  must have more than 6  characters'),
+//     // check('weekday', 'Choose a weekday').optional(),
+//     check('email', 'Your email is not valid').not().isEmpty(),
+//     check('password', 'Your password must be at least 5 characters').not().isEmpty(),
+//   ],
+//   function (req, res) {
+//     const errors = validationResult(req);
+//     console.log(req.body);
 
-    if (!errors.isEmpty()) {
-      return res.status(422).jsonp(errors.array());
-    } else {
-      res.send({});
-    }
-  });
+//     if (!errors.isEmpty()) {
+//       return res.status(422).jsonp(errors.array());
+//     } else {
+//       res.send({});
+//     }
+//   });
 
 
 router.post('/',(req,res)=>{
@@ -91,9 +92,9 @@ router.post('/',(req,res)=>{
 });
 
 // Delete Customer
-router.delete('/:account_no',(req,res)=>{
-    const {account_no}=req.params;
-     Customer.findOneAndRemove({account_no},(err,doc)=>{
+router.delete('/:cust_no',(req,res)=>{
+    const {cust_no}=req.params;
+     Customer.findOneAndRemove({cust_no},(err,doc)=>{
         if(err){
             console.log('Error in delete employee by id'+err)
        }

@@ -1,5 +1,6 @@
 const mongoose=require('mongoose')
  const Customer=mongoose.model('Customer',{
+
      cust_id:{type:Number},
      cust_name:{type:String},
      email:{type:String},
@@ -8,4 +9,4 @@ const mongoose=require('mongoose')
      address : {type:String}
        
       });
- module.exports={Customer};
+module.exports= Customer;

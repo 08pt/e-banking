@@ -40,7 +40,8 @@ function LoginForm() {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        setIsSubmitted(true);
+
+        setIsSubmitted(true,alert("User Succefully logged in"));
       }
     } else {
       // Username not found
@@ -56,11 +57,11 @@ function LoginForm() {
 
   // JSX code for login form
   const renderForm = (
-    <div className="form">
+    // /<div className="login-form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required />
+          <input   type="text" name="uname" required />
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
@@ -72,16 +73,17 @@ function LoginForm() {
           <input type="submit" />
         </div>
       </form>
-    </div>
+    // </div>
   );
 
   return (
-    <div className="app">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+   
+      <div style={{marginLeft:"30rem",marginTop:"12rem",  backgroundColor:"rgba(29, 93, 122, 0.96)"
+      ,boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",border:"8px solid grey"}} className="login-form">
+       
+        {isSubmitted ?<div></div> : renderForm}
       </div>
-    </div>
+   
   );
 }
   

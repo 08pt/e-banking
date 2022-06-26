@@ -9,13 +9,13 @@ const customer=require('./routers/customer.js');
 const transaction=require('./routers/transaction.js');
 const LoginRoute=require('./routers/login');
 const UserRoute =require('./routers/user');
-const admin=require('./routes/admin.js')
+const admin=require('./routers/admin.js')
 
 
 const app = express();
 app.use(bodyparser.json());
-
-app.listen(3000, ()=>console.log('server started at port: 3000'));
+const {check , validationResult} = require('express-validator/check')
+app.listen(5000, ()=>console.log('server started at port: 5000'));
 app.use('/account',account);
 app.use('/customer',customer);
 
