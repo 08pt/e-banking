@@ -3,8 +3,8 @@ import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
+import { AiFillHeart, AiOutlineTransaction, AiTwotoneFileExclamation } from "react-icons/ai";
+import { BsCartCheck, BsFillEyeFill, BsFillFileDiffFill, BsFillPersonPlusFill, BsGenderTrans } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
@@ -18,59 +18,41 @@ const routes = [
   {
     path: "/addacount",
     name: "Add Account",
-    icon: <FaUser />,
+    icon: <BsFillPersonPlusFill/>,
   },
   {
     path: "/showaccount",
     name: "show Account",
-    icon: <MdMessage />,
+    icon: <BsFillEyeFill/>,
   },
   {
     path: "/searchCustomer",
     name: "search Customers",
-    icon: <MdMessage />,
+    icon: <BiSearch />,
   },
-  // {
-  //   path: "/login",
-  //   name: "Login",
-  //   icon: <FaLock />,
-  // },
-  // {
-  //   path: "/registration",
-  //   name: "Sign up",
-  //   icon: <FaHome />,
-  // },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   icon: <FaHome />,
-  // },
-  // {
-  //   path: "/contact",
-  //   name: "Contact",
-  //   icon: <FaHome />,
-  // },
-  // {
-  //   path: "/",
-  //   name: "Dashboard",
-  //   icon: <FaHome />,
-  // },
-
   {
     path: "/addtransaction",
-    name: "showtransaction",
-    icon: <BiAnalyse />,
+    name: "Add Transaction",
+    icon: <AiOutlineTransaction/>,
   },
-  // {
-  //   path: "/costomer",
-  //   name: "Costomer",
-  //   icon: <AiTwotoneFileExclamation />,
-  //   subRoutes: [
-  //     {
-  //       path: "/customer/loginform",
-  //       name: "login",
-  //       icon: <FaUser />,
-  //     },
+
+  {
+    path: "/showtransaction",
+    name: "showtransaction",
+    icon: <BsFillEyeFill/>,
+  },
+  {
+    path: "/costomer",
+    name: "Costomer",
+    icon: <AiTwotoneFileExclamation />,
+    subRoutes: [
+      {
+        path: "/customer/loginform",
+        name: "login",
+        icon: <FaUser />,
+      }
+    ]
+    }
   //     {
   //       path: "/customer/regform",
   //       name: "Registration",

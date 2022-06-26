@@ -3,9 +3,13 @@ import { Component } from "react";
 import About from "./About/about";
 import Contact from "./Contact/contact";
 import Home from "./Home/home";
+import { BiAnalyse, BiSearch } from "react-icons/bi";
+
 // import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+
 
 class Navbar extends Component {
   render() {
@@ -34,7 +38,7 @@ class Navbar extends Component {
             </Link>
             &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
             <Link style={{color:"red"}} className="nlink" to="/logout">
-              Log out
+           Log out
             </Link>
             &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
           </ul>

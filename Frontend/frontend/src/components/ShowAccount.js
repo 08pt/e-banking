@@ -31,8 +31,13 @@ const ShowAccount = () =>{
 
 
     return(
-       <div>
-        <table border="1">
+    <div style={{  backgroundColor:  "rgba(29, 93, 122, 0.96)",height:"40rem",textAlign:"center",marginTop:"3rem",padding:"3rem",border:"10px solid rgb(157, 157, 190)",
+    boxShadow: "5px 10px rgb(186, 181, 181"
+        ,marginLeft:"12rem"}}>
+       <h3 style={{padding:"1.2rem" ,color:"bisque"}}>Account Details</h3>
+       
+       <div style={{backgroundColor:"white" ,marginTop:"2rem"}}>
+        <table border="1" >
             <tr>
                 <th>Account No</th>
                 <th>Holder Name</th>
@@ -64,6 +69,7 @@ const ShowAccount = () =>{
                 ))}
             </tbody>
         </table>
+       </div>
        </div>
 
     )

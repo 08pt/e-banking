@@ -1,6 +1,8 @@
 
 import React, { useState } from "react";
-import './style.css'
+import './style.css';
+
+
 
 
 function LoginForm() {
@@ -58,7 +60,10 @@ function LoginForm() {
   // JSX code for login form
   const renderForm = (
     // /<div className="login-form">
-      <form onSubmit={handleSubmit}>
+   
+      <form onSubmit={handleSubmit} style={{marginLeft:"33rem",marginTop:"8rem",  backgroundColor:"rgba(29, 93, 122, 0.96)"
+      ,boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",border:"8px solid grey"}} className="login-form">
+         <h2 style={{color:"bisque",textAlign:"center"}}>Login</h2>
         <div className="input-container">
           <label>Username </label>
           <input   type="text" name="uname" required />
@@ -78,9 +83,7 @@ function LoginForm() {
 
   return (
    
-      <div style={{marginLeft:"30rem",marginTop:"12rem",  backgroundColor:"rgba(29, 93, 122, 0.96)"
-      ,boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",border:"8px solid grey"}} className="login-form">
-       
+      <div >
         {isSubmitted ?<div></div> : renderForm}
       </div>
    

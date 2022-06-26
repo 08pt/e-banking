@@ -13,7 +13,7 @@ import AddAccount from "./components/Account/account"
 import SideBar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer";
 import RegForm from "./components/Customer/RegForm";
-import ShowCustomer from "./components/ShowCustomer";
+import SearchCustomer from "./components/Customer/SearchCustomer";
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/logout" element={<LogOut/>}></Route>
             <Route path="/addaccount" element={<AddAccount/>}></Route>
             <Route path="/showaccount" element={<ShowAccount />}></Route>
-            <Route path="/searchCustomer" element={<ShowCustomer/>}></Route>
+            <Route path="/searchCustomer" element={<SearchCustomer/>}></Route>
 
           </Routes>
         </SideBar>

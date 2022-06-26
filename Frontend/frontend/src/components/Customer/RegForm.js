@@ -120,7 +120,7 @@ class RegForm extends Component {
     return (
       <div className="regform">
         <div>
-          <h2>Register</h2>
+          <h2 style={{color:"bisque"}}>Register</h2>
           <form onSubmit={this.onFormSubmit}>
             <div className="reg-container">
               <label>
@@ -170,7 +170,7 @@ class RegForm extends Component {
                 <strong>Age</strong>
               </label>
               <br />
-              <input style={{width:"20rem",padding:".5rem",margin:"1.2rem"}}
+              <input
                 required
                 type="number"
                 name="age"
@@ -192,7 +192,7 @@ class RegForm extends Component {
                 <strong>Email</strong>
               </label>
               <br />
-              <input style={{width:"20rem" ,padding:".5rem",margin:"1.2rem"}}
+              <input 
                 required
                 type="email"
                 name="email"
@@ -213,7 +213,7 @@ class RegForm extends Component {
                 <strong>Phone</strong>
               </label>
               <br />
-              <input style={{width:"20rem",padding:".5rem",margin:"1.2rem" }}
+              <input 
                 required
                 type="tel"
                 name="name"

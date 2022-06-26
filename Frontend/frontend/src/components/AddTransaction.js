@@ -29,10 +29,11 @@ const AddTransaction = () => {
     <div className="container bg-light">
       <div className="row">  
        <div className="col-sm-4 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">ADD TRANSACTION DETAILS</h2>
-        <form onSubmit={e => onSubmit(e)}>
+        <h2 className="text-center mb-4" style={{marginLeft:"15rem",color:"bisque"}}>ADD TRANSACTION DETAILS</h2>
+        <form onSubmit={e => onSubmit(e)} style={{textAlign:"center",padding:"3rem"}}>
           <div className="form-group">
             <input
+             style={{padding:".5rem"}}
               type="number"
               className="form-control form-control-lg"
               placeholder="Enter transaction id"
@@ -40,9 +41,10 @@ const AddTransaction = () => {
               value={transaction_id}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           <div className="form-group">
             <input
+             style={{padding:".5rem"}}
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter transaction type"
@@ -50,9 +52,10 @@ const AddTransaction = () => {
               value={transaction_type}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           <div className="form-group">
             <input
+             style={{padding:".5rem"}}
               type="number"
               className="form-control form-control-lg"
               placeholder="Enter from account no"
@@ -60,9 +63,10 @@ const AddTransaction = () => {
               value={from_account_no}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           <div className="form-group">
             <input
+             style={{padding:".5rem"}}
               type="number"
               className="form-control form-control-lg"
               placeholder="Enter to account no"
@@ -70,9 +74,10 @@ const AddTransaction = () => {
               value={to_account_no}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           <div className="form-group">
             <input
+             style={{padding:".5rem"}}
               type="number"
               className="form-control form-control-lg"
               placeholder="Enter transaction amount"
@@ -80,9 +85,10 @@ const AddTransaction = () => {
               value={transaction_amount}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           <div className="form-group">
             <input
+            style={{padding:".5rem"}}
               type="date"
               className="form-control form-control-lg"
               placeholder="Enter date"
@@ -90,10 +96,10 @@ const AddTransaction = () => {
               value={transaction_date}
               onChange={e => onInputChange(e)}
             />
-          </div>
+          </div><br/>
           
 
-          <button className="btn btn-primary btn-block">Add Transaction
+          <button style={{color:"black",backgroundColor:"bisque",padding:".8rem"}}>Add Transaction
           </button>
         </form>
       </div>

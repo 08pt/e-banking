@@ -6,12 +6,8 @@ import LoginForm from "../Customer/LoginForm";
 function LogOut() {
   return (
     <div>
-      <ul>
-        <Link to="/logout">Log out</Link>
-      </ul>
-      <Routes>
-        <Route path="/logout" element={<LoginForm/>}></Route>
-      </Routes>
+      {/* //render to the login page */}
+      <LoginForm/>
     </div>
   );
 }

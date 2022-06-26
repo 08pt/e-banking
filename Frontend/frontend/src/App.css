@@ -1,17 +1,14 @@
 
   .nav{
     background-color:rgb(6, 6, 6);
-    padding: 10px;
+    padding: 15px;
  
 
-    
   }
-  /* .head{
-    color: rgba(16, 122, 179, 0.571);
-    text-align: left;
- 
- 
-  } */
+  .show-container{
+   
+   height: 50%;
+  }
 
   .nlink {
    
@@ -39,6 +36,7 @@
 * {
   margin: 2;
   box-sizing: border-box;
+ 
 }
 
 .main-container {
@@ -184,8 +182,8 @@ main {
 }
 input[type="text"],input[type="email"],input[type="number"],input[type="tel"],
 input[type="password"] {
-  height: 30px;
-  font-size: 1.3rem;
+  height:30px;margin:6px;
+  font-size: 1.1rem;
   border: 2px solid rgba(0, 0, 0, 0.2);
 
 }

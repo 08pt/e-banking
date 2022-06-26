@@ -19,8 +19,11 @@ const ShowTransaction = () =>{
 
 
     return(
-       <div>
-        <table border="1">
+       <div  style={{  backgroundColor:  "rgba(29, 93, 122, 0.96)",height:"40rem",textAlign:"center",marginTop:"3rem",padding:"3rem",border:"10px solid rgb(157, 157, 190)",
+       boxShadow: "5px 10px rgb(186, 181, 181"
+           ,marginLeft:"12rem"}} >
+             <h2 style={{padding:"1.2rem",color:"bisque"}} >Transaction History</h2>
+        <table border="1" style={{backgroundColor:"white" ,marginTop:"2rem"}}>
             <tr>
                 <th>Transaction Id</th>
                 <th>Transaction Type</th>
