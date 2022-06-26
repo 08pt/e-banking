@@ -1,48 +1,44 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home/home";
+import About from "./components/About/about"
+import LoginForm from "./components/Customer/LoginForm";
+import Contact from "./components/Contact/contact";
+import LogOut from "./components/LogOut/Logout";
+import Navbar from "./components/Navbar copy";
+import { Routes } from "react-router-dom";
+import ShowAccount from "./components/ShowAccount";
+import AddAccount from "./components/Account/account"
+import SideBar from "./components/Sidebar/Sidebar";
+import Footer from "./components/Footer";
+import RegForm from "./components/Customer/RegForm";
+import ShowCustomer from "./components/ShowCustomer";
 
-import { useLocation, Routes, Route } from "react-router-dom";
-import Home from './components/Home/home.js';
-import About from './components/About/about.js';
-import Contact from './components/Contact/contact.js';
-import LoginForm from './components/Customer/LoginForm';
-
-import './App.css';
-import CustomerRegister from './components/Customer/RegForm';
- 
 class App extends Component {
   render() {
     return (
-           <div className="App">
-            <ul className="App-header">
-             
-                <Link  className='link'  to="/">Home</Link>
-             
-             
-                <Link  className='link' to="/about">About Us</Link>
-             
-             
-                <Link  className='link' to="/contact">Contact Us</Link>
-             
-             
-                <Link  className='link' to="/login">Login</Link>
-             
-             
-                <Link  className='link' to="/registration">Register</Link>
-             
-            </ul>
-           <Routes>
-                 <Route exact path='/' element={< Home />}></Route>
-                 <Route exact path='/about' element={< About />}></Route>
-                 <Route exact path='/contact' element={< Contact />}></Route>
-                 <Route exact path='/login' element={ < LoginForm/>}></Route>
-                 <Route exact path='/registration' element={ <CustomerRegister/> }></Route>
+      <div>
+        <Navbar />
+
+        <SideBar>
+          <Routes>
+            <Route path="/home" element={<Home/>}></Route>
+            <Route path="/about" element={<About/>}></Route>
+            <Route path="/login" element={<LoginForm/>}></Route>
+            <Route path="/contact" element={<Contact/>}></Route>
+            <Route path="/registration" element={<RegForm/>}></Route>
+            <Route path="/logout" element={<LogOut/>}></Route>
+            <Route path="/addaccount" element={<AddAccount/>}></Route>
+            <Route path="/showaccount" element={<ShowAccount />}></Route>
+            <Route path="/searchCustomer" element={<ShowCustomer/>}></Route>
 
           </Routes>
-          </div>
-     
-   );
+        </SideBar>
+        <Footer />
+      </div>
+    );
   }
 }
- 
+
 export default App;
