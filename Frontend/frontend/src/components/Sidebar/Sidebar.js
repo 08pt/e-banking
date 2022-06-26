@@ -15,44 +15,68 @@ const routes = [
     name: "Dashboard",
     icon: <FaHome />,
   },
+ 
   {
-    path: "/addacount",
-    name: "Add Account",
-    icon: <BsFillPersonPlusFill/>,
-  },
-  {
-    path: "/showaccount",
-    name: "show Account",
-    icon: <BsFillEyeFill/>,
-  },
-  {
-    path: "/searchCustomer",
-    name: "search Customers",
-    icon: <BiSearch />,
-  },
-  {
-    path: "/addtransaction",
-    name: "Add Transaction",
-    icon: <AiOutlineTransaction/>,
-  },
-
-  {
-    path: "/showtransaction",
-    name: "showtransaction",
-    icon: <BsFillEyeFill/>,
-  },
-  {
-    path: "/costomer",
-    name: "Costomer",
+    path: "/admin",
+    name: "Admin",
     icon: <AiTwotoneFileExclamation />,
     subRoutes: [
       {
-        path: "/customer/loginform",
-        name: "login",
-        icon: <FaUser />,
-      }
+        path: "/admin/addaccount",
+        name: "Add Account",
+        icon: <BsFillPersonPlusFill/>,
+      },
+      {
+        path: "/admin/addcustomer",
+        name: "addcustomer",
+        icon: <BsFillEyeFill/>,
+      },
+      {
+        path: "/admin/searchCustomer",
+        name: "search Customers",
+        icon: <BiSearch />,
+      },
+      {
+        path: "/admin/showaccount",
+        name: "show Account",
+        icon: <BsFillEyeFill/>,
+      },
+      
     ]
+    },
+    {
+      path: "/account",
+      name: "Account",
+      icon: <AiTwotoneFileExclamation />,
+      subRoutes: [
+        {
+          path: "/account/update",
+          name: "Update Account",
+          icon: <BsFillPersonPlusFill/>,
+        },
+        
+      ]
+      },
+    //Trnsactions sidebar operations
+    {
+      path: "/transaction",
+      name: "Transaction",
+      icon: <AiTwotoneFileExclamation />,
+      subRoutes: [
+        {
+          path: "/transaction/addtransaction",
+          name: "Add Transaction",
+          icon: <AiOutlineTransaction/>,
+        },
+      
+        {
+          path: "/transaction/showtransaction",
+          name: "showtransaction",
+          icon: <BsFillEyeFill/>,
+        },
+      ]
     }
+   
   //     {
   //       path: "/customer/regform",
   //       name: "Registration",
@@ -171,13 +195,13 @@ const SideBar = ({ children }) => {
             {routes.map((route, index) => {
               if (route.subRoutes) {
                 return (
-                  // <SidebarMenu
-                  //   setIsOpen={setIsOpen}
-                  //   route={route}
-                  //   showAnimation={showAnimation}
-                  //   isOpen={isOpen}
-                  // />
-                  <></>
+                  <SidebarMenu
+                    setIsOpen={setIsOpen}
+                    route={route}
+                    showAnimation={showAnimation}
+                    isOpen={isOpen}
+                  />
+      
                 );
               }
 

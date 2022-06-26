@@ -8,12 +8,16 @@ import Contact from "./components/Contact/contact";
 import LogOut from "./components/LogOut/Logout";
 import Navbar from "./components/Navbar copy";
 import { Routes } from "react-router-dom";
-import ShowAccount from "./components/ShowAccount";
-import AddAccount from "./components/Account/account"
+import ShowAccount from "./components/Admin/ShowAccount";
+import AddAccount from "./components/Admin/AddAccount1"
 import SideBar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer";
 import RegForm from "./components/Customer/RegForm";
 import SearchCustomer from "./components/Customer/SearchCustomer";
+import ShowTransaction from "./components/Transactions/ShowTransaction";
+import AddTransaction from "./components/Transactions/AddTransaction";
+import AddCustomer from "./components/Admin/AddCustomer";
+import UpdateAccount from "./components/Account/UpdateAcc";
 
 class App extends Component {
   render() {
@@ -23,15 +27,19 @@ class App extends Component {
 
         <SideBar>
           <Routes>
-            <Route path="/home" element={<Home/>}></Route>
+            <Route exact path="/home" element={<Home/>}></Route>
             <Route path="/about" element={<About/>}></Route>
             <Route path="/login" element={<LoginForm/>}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
             <Route path="/registration" element={<RegForm/>}></Route>
             <Route path="/logout" element={<LogOut/>}></Route>
-            <Route path="/addaccount" element={<AddAccount/>}></Route>
-            <Route path="/showaccount" element={<ShowAccount />}></Route>
-            <Route path="/searchCustomer" element={<SearchCustomer/>}></Route>
+            <Route path="/admin/addaccount" element={<AddAccount/>}></Route>
+            <Route path="/admin/showaccount" element={<ShowAccount/>}></Route>
+            <Route path="/admin/searchCustomer" element={<SearchCustomer/>}></Route>
+            <Route path="/transaction/showtransaction" element={<ShowTransaction/>}></Route>
+            <Route path="/transaction/addtransaction" element={<AddTransaction/>}></Route>
+            <Route path="/admin/addcustomer" element={<AddCustomer/>}></Route>
+            <Route path="/account/update" element={<UpdateAccount/>}></Route>
 
           </Routes>
         </SideBar>
